@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block content %}
+<section class="post">
+  {% for post in latest %}
+  <div class="row-fluid">
+    <div class="span2"><h1>{{ post.date|date:"Y" }}</h1></div>
+    <div class="span2"><h2>{{ post.date|date:"M d" }}</h2></div>
+    <div class="span8">
+      <a href="{% url blog-detail post.slug %}"><h1>{{ post.title }}</h1></a>
+      {{ post.text|markdown:"extra"|truncatewords_html:25 }}
+      <p>
+        <b>Tags:</b> 
+        {% for tag in post.tags.all %}
+        <a href="{% url blog-tagarchive tag.slug %}">{{ tag.name }}</a>{% if not forloop.last%}, {% endif %}
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+</section>
+
+<br>
+
+{% if is_paginated %}
+<div class="pagination pagination-centered">
+  <ul>
+    {% if not page_obj.has_previous %}<li class="disabled">{% else %}<li>{% endif %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+    </li>
+
+    {% for i in paginator.page_range %}
+    {% if i == page_obj.number %}
+    <li class="active"><a href="#">{{ i }}</a></li>
+    {% else %}
+    <li><a href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if not page_obj.has_next %}<li class="disabled">{% else %}<li>{% endif %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+    </li>
+  </ul>
+</div>
+{% endif %}
+{% endblock %}

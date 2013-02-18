@@ -1,0 +1,33 @@
+<div id="createPostModal" class="modal hide fade">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>New blog post</h3>
+  </div>
+  <div class="modal-body">
+  
+    <form class="form-horizontal" method="post" action="">
+      <fieldset>
+        {% for field in form %}
+        <div class="control-group">
+          <label class="control-label" for="input01">{{ field.label_tag }}</label>
+          <div class="controls">
+            {{ field }}
+            <p class="help-block">{{ field.help_text }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </fieldset>
+      {% csrf_token %}
+      <input class="btn btn-large btn-primary" type="submit" value="Publish" />
+    </form>
+
+    {% comment %}{{ form.as_p }}
+    <input class="btn btn-large btn-primary" type="submit" value="Publish" />
+    {% endcomment %}
+
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary"><i class="icon-share icon-white"></i> Publish</a>
+    <a href="#" class="btn" data-dismiss="modal" >Close</a>
+  </div>
+</div>

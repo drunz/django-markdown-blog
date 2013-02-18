@@ -1,0 +1,44 @@
+/* Custom Blog Style Extensions for Bootstrap */
+
+body {
+  /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-top: 60px;
+}
+.container {
+  width: 768px;
+  /* width: 837px; */
+}     
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+}
+.post p {
+  margin: 5px 0 9px;
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+.post blockquote p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+.post blockquote small {
+  font-size: 14px;
+}
+.post ul {
+  margin: 15px 0 15px 25px;
+}
+.post li {
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+.search-eye-catching {
+  padding: 6px 14px;
+  height: 25px;
+  font-size: 18px;
+}

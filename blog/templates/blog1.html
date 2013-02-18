@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Canny</title>
+
+    <!-- javascripts -->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <!-- <link href="{{ STATIC_URL }}screen.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
+    <style type="text/css" media="screen">
+      /* body { font: 21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; } */
+      /* * { font: 18px/25px 'Palatino', 'Palatino Linotype', 'Georgia', serif; line-height: 20pt; } */
+      * { font-family: "PT Serif", Georgia, Times, "Times New Roman", serif; }
+      .container { width: 768px; }
+      html { background-image: url({{ STATIC_URL }}noise.png); }
+    </style>
+</head>
+<body>
+{% load markup %}
+
+<div class="container">
+  {% for post in posts %}
+  <h1>{{ post.title }} <small>{{ post.date }}</small></h1>
+  {{ post.text|markdown:"safe" }}
+  {% endfor %}
+</div>
+
+</body>
+</html>

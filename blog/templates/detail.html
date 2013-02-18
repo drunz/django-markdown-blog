@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block content %}
+<section class="post">
+  <h3>{{ post.date|date:"M jS, Y" }}</h3>
+  <h1>
+    {{ object.title }} 
+    {% if user.is_authenticated %}
+    <a href="{% url admin:blog_post_change post.id %}"><small>Edit</small></a>
+    {% endif %}
+  </h1>
+  {{ object.text|markdown:"extra" }}
+</section>
+{% endblock %}

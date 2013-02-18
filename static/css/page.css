@@ -1,0 +1,107 @@
+/* Custom Content Page (CMS) Style Extensions for Bootstrap */
+
+/* Typesetting */
+.page h1,
+.page h2,
+.page h3,
+.page h4,
+.page h5,
+.page h6 {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+.page p {
+  margin: 5px 0 9px;
+  font: 17px/24px "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  /*font: 17px/24px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;*/
+  background-color: transparent;
+  /*color: #333;*/
+  /*-webkit-font-smoothing: antialiased;*/
+}
+
+/* Blockquotes */
+.page blockquote p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+.page blockquote small {
+  font-size: 14px;
+}
+
+/* Thumbnails */
+.page ul.pull-right, .page ul.thumbnails {
+  margin: 0px 0px 2px 2px;
+}
+
+.page ul.pull-left, .page ul.thumbnails {
+  margin: 0px 2px 2px 0px;
+}
+
+/* Enumerations */
+.page ul {
+  margin: 15px 0 15px 25px;
+}
+.page li {
+  font: 16px/24px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
+/* Definition lists */
+.page dl {
+  font: 16px/24px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+.page dt, .page dd {
+  line-height: 25px;
+}
+.page dd {
+  margin-left: 25px;
+}
+
+/* Smaller font size for footnotes */
+.footnote p, .footnote li {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+/* Search */
+.search-eye-catching {
+  padding: 6px 14px;
+  height: 25px;
+  font-size: 18px;
+}
+
+/* Tables: Copied from Bootstrap 2.0.1 .table class style (+ larger font) */
+.page table {
+  font-size: 14px;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.page th, .page td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.page th {
+  font-weight: bold;
+}
+.page thead th {
+  vertical-align: bottom;
+}
+.page thead:first-child tr th, .page thead:first-child tr td {
+  border-top: 0;
+}
+.page tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.page tbody tr:hover td, .page tbody tr:hover th {
+  background-color: #f5f5f5;
+}
+
+/* Code pre fix: change back to monospace font */
+ol.linenums li {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 12px;
+}

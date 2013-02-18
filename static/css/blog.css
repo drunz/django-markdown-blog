@@ -1,0 +1,157 @@
+/* Custom Blog Style Extensions for Bootstrap */
+body {
+  padding-top: 60px;
+}
+.navbar .container, .container {
+  width: 768px;
+}
+.footer {
+  margin-top: 45px;
+  padding: 35px 0 36px;
+  border-top: 1px solid #e5e5e5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+
+/* Pagelet links */
+.pagelet-links-off li {
+  display: inline;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+/* Login */
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+ 
+/* Typesetting */
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+}
+.post p {
+  margin: 5px 0 9px;
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+/* Blockquotes */
+.post blockquote p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+.post blockquote small {
+  font-size: 14px;
+}
+
+
+/* Enumerations */
+.post ul {
+  margin: 15px 0 15px 25px;
+}
+.post li {
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+/* Definition lists */
+.post dl {
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+.post dt, .post dd {
+  line-height: 25px;
+}
+.post dd {
+  margin-left: 25px;
+}
+
+
+/* Smaller font size for footnotes */
+.footnote p, .footnote li {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+
+/* Search */
+.search-eye-catching {
+  padding: 6px 14px;
+  height: 25px;
+  font-size: 18px;
+}
+
+
+/* Tables: Copied from Bootstrap 2.0.1 .table class style (+ larger font) */
+.post table {
+  font-size: 14px;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.post th, .post td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.post th {
+  font-weight: bold;
+}
+.post thead th {
+  vertical-align: bottom;
+}
+.post thead:first-child tr th, .post thead:first-child tr td {
+  border-top: 0;
+}
+.post tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.post tbody tr:hover td, .post tbody tr:hover th {
+  background-color: #f5f5f5;
+}
+
+
+/* Code pre fix: change back to monospace font */
+ol.linenums li {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 12px;
+}

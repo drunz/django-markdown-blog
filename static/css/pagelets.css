@@ -1,0 +1,82 @@
+.pagelet-preview ul.pagelet-links {
+	display: none;
+}
+
+.pagelet-preview {
+	margin-bottom: 1em;
+}
+
+.page-title {
+	font-size: 140%;
+	font-weight: bold;
+	margin: 1em 0 0.5em 0;
+}
+
+#pagelet-form table {
+    width: 100%;
+}
+
+.pagelet-submit {
+	text-align: right;
+}
+
+#pagelet-form ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#pagelet-form li {
+    list-style-type: none;
+}
+
+#pagelet-form li label,
+div.pagelet-submit {
+    margin-top: 1em;
+}
+
+#pagelet-form ul label {
+	display: block;
+	margin-bottom: 0.5em;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.pagelet-preview .pagelet {
+	float: none;
+}
+
+ul.pagelet-links {
+	padding: 0;
+	margin: 0;
+}
+
+ul.pagelet-links li {
+        display: inline;
+        padding: 0 0.2em 0 0.5em;
+}
+
+ul.pagelet-links li:first-child {
+        padding: 0 0.2em 0 0;
+        border-left: none;
+}
+
+ul.pagelet-links {
+	padding-top: 1em;
+}
+
+ul.pagelet-links .pagelet-remove-link {
+	float: right;
+}
+
+ul.pagelet-links li a {
+        background: #ddd;
+        margin: 0;
+        padding: 0.3em 0.3em 1px 0.3em;
+        text-decoration: none;
+        color: black;
+}
+
+.pagelet.editable .pagelet-content {
+        border: 1px dashed #ddd;
+}

@@ -1,0 +1,10 @@
+<ul class="breadcrumb">
+  <li><a href="{% url blog-index %}">Home</a> <span class="divider">/</span></li>
+  {% for url, title in trail %}
+  {% if url %}
+  <li><a href="{{ url }}">{{ title }}</a> <span class="divider">/</span></li>
+  {% else %}
+  <li class="active">{{ title }}</li>
+  {% endif %}
+  {% endfor %}
+</ul>

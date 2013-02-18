@@ -1,0 +1,16 @@
+<ul class="thumbnails pull-right">
+  <li class="span3">
+    <div class="thumbnail">
+        <img src="{{ content.mediafile.file.url }}" alt="{{ content.mediafile.translation.caption }}">
+      {% if content.mediafile.translation.caption %}
+      <div class="caption">
+        <h5>{{ content.mediafile.translation.caption }}</h5>
+        <p>{{ content.mediafile.translation.description }}</p>
+      </div>
+      {% endif %}
+      {% if content.mediafile.copyright %}
+      <span class="copyright">&copy; {{ content.mediafile.copyright }}</span>
+      {% endif %}
+    </div>
+  </li>
+</ul>

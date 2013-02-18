@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Canny</title>
+
+    <!-- javascripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ STATIC_URL }}js/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('ul#quotes').quote_rotator({ 
+                rotation_speed: 10000,      // defaults to 5000
+                //pause_on_hover: false,    // defaults to true
+                randomize_first_quote: true // defaults to false
+            });
+        });
+    </script>
+    
+    <!-- styles -->
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css" media="screen">
+    	* { margin:0; padding:0; }
+    	html, body { height:100%; background-color:#FDFDFD; }
+        /* Blockquotes */
+        #quotes {
+          color: #252525;
+        }
+        #quotes blockquote {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 20px;
+          line-height: 24px;
+        }
+        #quotes cite {
+          font-size: 16px;
+          margin-top: 150px;
+        }
+        a { 
+            text-decoration:none;
+            /*color:#222222;*/
+            color:#000000;
+            font-size:15px;
+       	}
+        a:hover { color:#7A7A7A; }
+        #menu {
+            text-align:center;
+            height:10px;
+        }
+        #floater { 
+            float:left;
+            height:50%;
+            margin-bottom:-55px; /* half #centered height */
+        }
+        #centered { 
+            clear:both;
+            width:650px;
+            height:100px;
+            text-align:center;
+            margin:0 auto;
+            position:relative;
+        }
+        #left {
+            margin:auto;
+            text-align:left;
+        }
+        ul { list-style:none; cursor:pointer; margin:0; padding:0; }
+        ul blockquote { list-style:none; margin:0; }
+    </style>
+
+</head>
+<body>
+
+{% if user.is_authenticated %}
+<div id="menu">
+    <a href="admin/">Admin</a>
+    <a href="http://canny.ath.cx/monitorix/">Monitorix</a> 
+    <a href="http://canny.ath.cx/awstats/awstats.pl">AWStats</a> 
+    <a href="http://canny.ath.cx/webalizer/">Webalizer</a>
+    <a href="http://canny.ath.cx:631">CUPS</a>
+    <a href="http://canny.ath.cx/phpmyadmin/">phpMyAdmin</a>
+</div>
+{% endif %}
+
+<div id="floater"></div>
+
+<div id="centered">
+    <div id="left">
+    <ul id="quotes">
+    {% for quote in quotes %}
+        <li>
+            <blockquote>„{{ quote.text }}“<cite>&mdash; {{ quote.author }}</cite></blockquote>
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+</div>
+
+</body>
+</html>

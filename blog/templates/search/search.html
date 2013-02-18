@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load markup %}
+{% load highlight %}
+{% load more_like_this %}
+
+{% block scripts %}
+<script type="text/javascript">
+  document.forms['search-form'].elements['search-field'].focus();
+</script>
+{% endblock %}
+
+{% block content %}
+{% if not query %}
+<form id="search-form" class="well form-vertical" method="get" action=".">
+  <div class="post" align="center">
+    <p><h1>All articles at your fingertips</h1></p>
+    <input id="search-field" type="text" class="input span6 search-eye-catching" name="q" value="{{ query }}">
+  </div>
+  <button type="submit" class="btn btn-primary btn-large offset6">
+    <i class="icon-search icon-white"></i> Search
+  </button>
+</form>
+{% else %}
+<form id="search-form" class="well form-search" method="get" action="." align="right">
+  <h3 class="pull-left">Search results</h3>
+  <input type="text" class="input-large search-query" name="q" value="{{ query }}">
+  <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i> Search</button>
+</form>
+{% endif %}
+
+{% comment %}
+<p class="help-block"><strong>Note:</strong> Use binary operators.</p>
+<table>
+    {{ form.as_table }}
+</table>
+{% endcomment %}
+
+{% if query %}
+{% for result in page.object_list %}
+<section class="post">
+  <div class="row-fluid">
+    <div class="span3"><h2>{{ result.object.date|date:"M d, Y" }}</h2></div>
+    <div class="span9">
+      <a href="{% url blog-detail result.object.slug %}"><h1>{{ result.object.title }}</h1></a>
+      {% with text=result.object.text|markdown:"extra" %}
+      <p>{% highlight text with query html_tag "b" max_length 300 %}</p>
+      
+      {% more_like_this result.object as related_posts limit 3 %}
+      {% if related_posts %}
+      <p>
+        <b>Related:</b>
+        {% for related in related_posts %}
+        <a href="{% url blog-detail related.object.slug %}">{{ related.object.title }}</a>{% if not forloop.last%}, {% endif %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      
+      {% endwith %}
+    </div>
+  </div>
+  <br>
+</section>
+{% empty %}
+<div class="alert alert-block">
+  <h4 class="alert-heading">No results for "{{ query }}"</h4>
+  Try using more general search terms to broaden the search space.
+</div>
+{% endfor %}
+{% else %}
+<div class="alert alert-info">
+  <h4 class="alert-heading">Searching is easy</h4>
+  Type in any keywords or tags that come in mind to search for published articles.
+</div>
+{% endif %}
+
+
+{% comment %}
+  {% if page.has_previous or page.has_next %}
+      <div>
+          {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+          |
+          {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+      </div>
+  {% endif %}
+{% else %}
+  {# Examples queries etc. #}
+{% endif %}
+{% endcomment %}
+{% endblock %}
